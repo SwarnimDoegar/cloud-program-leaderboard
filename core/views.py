@@ -12,6 +12,7 @@ from django.http import HttpResponse
 
 class GetAllUserList(APIView):
     def get(self,request):
+        summary()
         query = UserModel.objects.all()
         serializer = UserSerializer(query,many=True)
         serializer_data = sorted(serializer.data, key = lambda i: i['quests_status'],reverse=True)[0:20]
