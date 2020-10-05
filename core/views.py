@@ -6,7 +6,7 @@ from .serializer import UserSerializer
 from .models import UserModel
 from rest_framework.response import Response
 from django.conf import settings
-from tasks import summary
+from .tasks import summary
 from django.http import HttpResponse
 
 
