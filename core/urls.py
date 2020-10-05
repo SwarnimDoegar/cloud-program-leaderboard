@@ -2,5 +2,5 @@ from django.urls import path
 from . import views
 urlpatterns = [
     path('', views.GetAllUserList.as_view()),
-    path('/api', views.api)
+    path('/api', views.api),
 ]
