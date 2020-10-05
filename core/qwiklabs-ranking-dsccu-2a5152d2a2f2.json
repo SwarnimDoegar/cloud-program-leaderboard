@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "qwiklabs-ranking-dsccu",
+  "private_key_id": "2a5152d2a2f24e3561e607e9848abb28cf61c9fd",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCuFryeyEjml67k\nYDMnDK2E9oYw/QBDDsBz8UoOurLh3Gkx5qgUq22jtIxSuNl738UoQhcpNsJ8NqiZ\nSLv6oWb8hQYzz0qCTwvXyr3vv2/68cJMFfSKkRFOch6jW4N7G3o2e/YFgnb/lTF2\nnQtVFgzwuQvGWwbvEA+JCanZoVir46CFC4ugJqipofdPr8RGyJdZj1NZja7ay9pi\n58SvteGR/k0UffNXIod13rq+X9xF+1jJtRvFVlNlbBxbOrfs+v1DA28yAckiob9u\ne3IWcKBI9I806HvdC7vldU1jlHpYqhIjzaMEqkqPvsXzvtkQBFpbXVnc4xqC3mNC\n266Mqx35AgMBAAECggEABdrxaqTBYPIamYdLySUxw95XypeD1f2NxwiHTWIFqLeV\nWS6RGire4+nra0/YzsQKuU0pwsLa/TsIZiluWyJpGJavy/fNoX7fntkslL77WPUf\nLBhz8mIpMxp/Ac8O58nXjTQTpQFLl9KQiJUFH84/TqxmozwGCm3fm+QVkKKO3S8b\nUFPumV37XoZi8rVIaMVO5UST2ui+noA8PnHzl1s+q/2WDR9VZX6PiG5bIL2rbJpL\nqwZjrfD4kl6AF0XtwmtU9rDLdoB1m7Al8tgey4dMhzwyO7P06mHBkjZdRWDpNQKp\n9sQBSQTZyzZsAKbONEmcErRWOjg+VdRpXKy+IFbhoQKBgQDTqGZuvmbcD5dKJ++l\n3vbJ6aLXRrJQOXDgr240NqQ3RTk391nyOi4LF8uL+CGcmJS4L6aBg2hcxUXKms0n\njCFYaE1bigzycfVhzfrhvqtggCyx7t6KX6fLe5SezIkUZjGqLBs9JhzpzlyeC/qk\n8RBpY+btd1boMWmkApkYS4KaaQKBgQDSj3EetI/G99o/23L9GKyly7woDGZMR+MP\n67i9aX8Qrah6cz4EcWwbKOzSJF5XkgZJk4R9PgzpuUGlT6eK7/sxWelr6qEeVLgj\nU2+P8rfqY5F8XfhzWi4knzFuBHSjtp2S3DRaFBOgrsatsHLHFZikmP5mweG6DCZ5\n2Qd3UqpVEQKBgHEagypYqsSbvD/PWXusyvoY1IDvcWf3Wf9nH5/dNyGl5y6mCjWr\nq2EYJRg1z1hMHOTT6ck5vHIepO3gjRK+Ci+hBP2Opt6D0RmjpZYueowF0lx/BgKx\nnQvajQ/SwsnY1l9WVHP3wumZ8dovEpBDlX6L+SIabKGFjisrjD30U+VJAoGAVCaf\nvvXKwGot/3dk7WH/HgPenuLVv4a7aJF8s7aF4dSFkOqdzojF+9TPUOzYB4eEm8Mp\nICS8ZGx1n+vFufFPItocP9T1r3mMXhHqdE0806AXdOzZbsCL0HcO+jktpIBHWXpI\nMff0IDO5k5EBTi+DYcUDZ231GLXiarAiG74d9QECgYBu+01rBk8PF2ScbpVucL+R\neT0PlVV/GCScykPmAjAPfV/FBSuL0n6gAILSSDKfm47jPkfjHfu2YMnRH3S+nKXJ\nhmX/FlQSjAc8HsuCyqz2e9JZdT0qi7bgzS7C88nAqhnK0/c53feyB5KtuHaZJxuH\nHuqthL8EV88A3FIq3fDORA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "dssccu-628@qwiklabs-ranking-dsccu.iam.gserviceaccount.com",
+  "client_id": "112223929856000308299",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/dssccu-628%40qwiklabs-ranking-dsccu.iam.gserviceaccount.com"
+}

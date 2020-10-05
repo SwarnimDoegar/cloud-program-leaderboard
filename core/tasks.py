@@ -2,7 +2,23 @@ from django.conf import settings
 from core.models import UserModel
 import requests 
 from bs4 import BeautifulSoup
-from celery import shared_task 
+from celery import shared_task
+import gspread
+from oauth2client.service_account import ServiceAccountCredentials
+
+# define the scope
+scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
+
+# add credentials to the account
+creds = ServiceAccountCredentials.from_json_keyfile_name('core/qwiklabs-ranking-dsccu-2a5152d2a2f2.json', scope)
+
+# authorize the clientsheet 
+client = gspread.authorize(creds)
+
+sheet = client.open('30 Days of Google Cloud event')
+sheet_instance = sheet.get_worksheet(1)
+
+
 
 CHALLENGES_AVAILABLE = [
     'Integrate with Machine Learning APIs', 
@@ -45,7 +61,9 @@ def GetCountAndResourcesDone(URL):
 @shared_task
 def summary():
     print("Starting scrap")
-    for  i in settings.USERS_URLS:
+    URLS = sheet_instance.col_values(3)[1:]
+    URLS = [i for i in URLS if i]
+    for  i in URLS:
         try:
             data = GetCountAndResourcesDone(i)
         except:
