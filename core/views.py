@@ -16,6 +16,3 @@ class GetAllUserList(APIView):
         serializer = UserSerializer(query,many=True)
         serializer_data = sorted(serializer.data, key = lambda i: i['quests_status'],reverse=True)[0:20]
         return Response(serializer_data,status=200)
-def api(request):
-    summary()
-    return HttpResponse("OK")
