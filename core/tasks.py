@@ -51,7 +51,8 @@ def GetCountAndResourcesDone(URL):
             badge['name'] = divs[1].text.strip()
             badge['img'] = divs[0].img['src']
             badge['earned'] = divs[2].text.strip()[7:]
-        COMPLETED_QUESTS.append(badge)
+        if(badge):
+            COMPLETED_QUESTS.append(badge)
 
     profile = soup.findAll('div', attrs = {'class':'public-profile__hero'})[0]
     dp = profile.img['src']
