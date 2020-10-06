@@ -14,5 +14,5 @@ class GetAllUserList(APIView):
     def get(self,request):
         query = UserModel.objects.all()
         serializer = UserSerializer(query,many=True)
-        serializer_data = sorted(serializer.data, key = lambda i: i['quests_status'],reverse=True)[0:20]
+        serializer_data = sorted(serializer.data, key = lambda i: i['quests_status'],reverse=True)[0:50]
         return Response(serializer_data,status=200)
