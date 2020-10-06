@@ -20,20 +20,20 @@ sheet_instance = sheet.get_worksheet(1)
 
 
 
-CHALLENGES_AVAILABLE = [
-    'Integrate with Machine Learning APIs', 
-    'Perform Foundational Data, ML, and AI Tasks in Google Cloud', 
-    'Explore Machine Learning Models with Explainable AI', 
-    'Engineer Data in Google Cloud', 
-    'Insights from Data with BigQuery', 
-    'Deploy to Kubernetes in Google Cloud', 
-    'Build and Secure Networks in Google Cloud', 
-    'Deploy and Manage Cloud Environments with Google Cloud', 
-    'Set up and Configure a Cloud Environment in Google Cloud', 
-    'Perform Foundational Infrastructure Tasks in Google Cloud', 
-    'Getting Started: Create and Manage Cloud Resources',
-    'Google Cloud Essentials'
-    ]
+# CHALLENGES_AVAILABLE = [
+#     'Integrate with Machine Learning APIs', 
+#     'Perform Foundational Data, ML, and AI Tasks in Google Cloud', 
+#     'Explore Machine Learning Models with Explainable AI', 
+#     'Engineer Data in Google Cloud', 
+#     'Insights from Data with BigQuery', 
+#     'Deploy to Kubernetes in Google Cloud', 
+#     'Build and Secure Networks in Google Cloud', 
+#     'Deploy and Manage Cloud Environments with Google Cloud', 
+#     'Set up and Configure a Cloud Environment in Google Cloud', 
+#     'Perform Foundational Infrastructure Tasks in Google Cloud', 
+#     'Getting Started: Create and Manage Cloud Resources',
+#     'Google Cloud Essentials'
+#     ]
 
 
 
@@ -45,8 +45,14 @@ def GetCountAndResourcesDone(URL):
     quests = soup.findAll('div', attrs = {'class':'public-profile__badges'})   
     for row in quests[0].findAll('div', attrs = {'class':'public-profile__badge'}): 
         divs = row.findChildren("div" , recursive=False)
-        if divs[1].text.strip() in CHALLENGES_AVAILABLE:
-            COMPLETED_QUESTS.append(divs[1].text.strip())
+        badge = {}
+        date = divs[2].text.strip()[7:].split(" ")
+        if (date[0] == 'Oct' or date[0] == 'Nov') and (date[2] == '2020'):
+            badge['name'] = divs[1].text.strip()
+            badge['img'] = divs[0].img['src']
+            badge['earned'] = divs[2].text.strip()[7:]
+        COMPLETED_QUESTS.append(badge)
+
     profile = soup.findAll('div', attrs = {'class':'public-profile__hero'})[0]
     dp = profile.img['src']
     name = profile.h1.text
