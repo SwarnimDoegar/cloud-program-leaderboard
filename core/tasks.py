@@ -32,7 +32,6 @@ CHALLENGES_AVAILABLE = [
     'Set up and Configure a Cloud Environment in Google Cloud', 
     'Perform Foundational Infrastructure Tasks in Google Cloud', 
     'Getting Started: Create and Manage Cloud Resources',
-    'Google Cloud Essentials'
     ]
 
 
