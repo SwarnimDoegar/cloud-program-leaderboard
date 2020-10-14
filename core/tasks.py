@@ -5,6 +5,7 @@ from bs4 import BeautifulSoup
 from celery import shared_task
 import gspread
 from oauth2client.service_account import ServiceAccountCredentials
+import json
 
 # define the scope
 scope = ['https://spreadsheets.google.com/feeds','https://www.googleapis.com/auth/drive']
@@ -41,17 +42,14 @@ def GetCountAndResourcesDone(URL):
     COMPLETED_QUESTS = []
     r = requests.get(URL) 
     soup = BeautifulSoup(r.content, 'html5lib')
-    quests = soup.findAll('div', attrs = {'class':'public-profile__badges'})   
-    for row in quests[0].findAll('div', attrs = {'class':'public-profile__badge'}): 
-        divs = row.findChildren("div" , recursive=False)
-        badge = {}
-        date = divs[2].text.strip()[7:].split(" ")
-        if divs[1].text.strip() in CHALLENGES_AVAILABLE:
-            badge['name'] = divs[1].text.strip()
-            badge['img'] = divs[0].img['src']
-            badge['earned'] = divs[2].text.strip()[7:]
-        if(badge):
-            COMPLETED_QUESTS.append(badge)
+    quests = soup.findAll('div', attrs = {'class':'public-profile__badges'})
+    badgeElements = quests[0].findAll('ql-badge') 
+    for row in badgeElements: 
+        divs = json.loads(row.get('badge'))
+        # date = divs[2].text.strip()[7:].split(" ")
+        if divs['title'].strip() in CHALLENGES_AVAILABLE:
+            COMPLETED_QUESTS.append(divs)
+            
 
     profile = soup.findAll('div', attrs = {'class':'public-profile__hero'})[0]
     dp = profile.img['src']
